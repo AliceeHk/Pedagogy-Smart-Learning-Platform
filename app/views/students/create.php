@@ -33,7 +33,8 @@
             height: 80%;
             display: flex;
             flex-direction: row;
-            border-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
             overflow: hidden;
         }
 
@@ -43,6 +44,7 @@
             justify-content: center;
             align-items: center;
             background-color: #b6b6b6;
+            width: 50%;
         }
 
         .rectangle>div:last-child {
@@ -62,6 +64,8 @@
             padding: 15px 20px;
             text-align: left;
             margin: 0.5% 0;
+            font-size: 90%;
+            font-weight: 300;
         }
 
         form {
@@ -91,13 +95,13 @@
 <body>
     <div class="rectangle">
         <div>
-            <img src="/gambar.png" alt="Gambar">
+            <img src="/assets/images/hasil.png" alt="Gambar">
         </div>
         <div>
             <p style="font-size:300%; font-weight: bold;">Hello Student</p>
             <h1 style="margin-top: -12%; margin-bottom: 10%;">Please Sign Your Account</h1>
             <form action="/students/store" method="POST">
-                <input type="text" name="name" placeholder="Name" required><br>
+                <input type="email" name="E-mail" placeholder="E-mail" required><br>
                 <input type="password" name="password" placeholder="Password" required><br>
                 <button type="submit">Log In</button>
         </div>
