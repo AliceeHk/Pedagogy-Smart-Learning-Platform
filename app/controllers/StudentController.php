@@ -17,11 +17,6 @@ class StudentController
     {
         require_once '../app/views/students/show.php';
     }
-
-    public function home()
-    {
-        require_once __DIR__ . '/../views/students/home.php';
-    }
 }
 
 ?>
