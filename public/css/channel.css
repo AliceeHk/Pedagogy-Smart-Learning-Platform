@@ -1,0 +1,163 @@
+@font-face {
+    font-family: ;
+    src: url(https://fonts.gstatic.com/s/robotoflex/v1/4cH8v5iYQyM9nqjKZt3mXoA.woff2) format('woff2');
+}
+
+
+:root {
+    --primary-red: #c64343;
+    --bg-light: #fff9f5;
+    --sidebar-width: 80px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    background-color: var(--bg-light);
+}
+
+/* Sidebar */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--primary-red);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    color: white;
+}
+
+.menu-icons {
+    margin-top: 50px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Main Content */
+.content {
+    margin-left: var(--sidebar-width);
+    width: 100%;
+    padding: 20px 40px;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.brand {
+    color: #e67e22;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.search-container {
+    position: relative;
+    /* 1. Membesarkan Search Box (Width) */
+    width: 500px; 
+    margin: 20px auto;
+}
+
+.search-input {
+    width: 100%;
+    /* 2. Padding kanan (45px) agar teks tidak menabrak ikon di kanan */
+    padding: 15px 45px 15px 20px; 
+    border-radius: 30px; /* Membuat sudut lebih melengkung/bulat */
+    border: 1px solid #e0e0e0;
+    font-size: 16px;
+    outline: none;
+    background-color: #fff;
+}
+
+.search-icon {
+    position: absolute;
+    /* 3. Pindah ke kanan */
+    right: 20px; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 18px; /* Memperbesar ukuran ikon */
+    cursor: pointer;
+}
+
+/* Course Header */
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.course-info {
+    display: flex;
+    gap: 20px;
+}
+
+.course-thumb {
+    border-radius: 10px;
+    width: 180px;
+}
+
+.text-hal {
+    text-align: justify;
+    line-height: 1.7;
+    font-size: 18px;
+    font-family: ;
+    margin: 1px;
+}
+
+.btn-unfollow {
+    background: var(--primary-red);
+    color: white;
+    border: none;
+    padding: 25px 50px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* Stats */
+.stats-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.bar {
+    background: #eee;
+    height: 10px;
+    width: 100px;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.fill {
+    background: #f1c40f;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.total-rating {
+    background-color: #fef5d8;
+}
