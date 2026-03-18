@@ -1,108 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Siswa</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
-        {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            border: 1px solid black;
-        }
-
-        html,
-        body {
-            height: 99%;
-            font-weight: bold;
-            font-family: 'Roboto Flex';
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #FFF7F2;
-        }
-
-        .rectangle {
-            width: 70%;
-            height: 80%;
-            display: flex;
-            flex-direction: row;
-            border-top-right-radius: 50px;
-            border-bottom-right-radius: 50px;
-            overflow: hidden;
-        }
-
-        .rectangle>div:first-child {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #b6b6b6;
-            width: 50%;
-        }
-
-        .rectangle>div:last-child {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            background-color: #C33E3E;
-        }
-
-        input {
-            width: 80%;
-            border-radius: 20px;
-            border: none;
-            padding: 15px 20px;
-            text-align: left;
-            margin: 0.5% 0;
-            font-size: 90%;
-            font-weight: 300;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: left;
-            width: 80%;
-            font-size: 105%;
-        }
-        
-        button {
-            width: 90%;
-            border-radius: 20px;
-            border: none;
-            font-size: 105%;
-            padding: 15px 20px;
-            background-color: #FFF7F2;
-            color: #C33E3E;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10%;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="/css/custom.css">
 </head>
-
-<body>
+<body class="create-bg">
     <div class="rectangle">
         <div>
             <img src="/assets/images/hasil.png" alt="Gambar">
         </div>
         <div>
-            <p style="font-size:300%; font-weight: bold;">Hello Student</p>
-            <h1 style="margin-top: -12%; margin-bottom: 10%;">Please Sign Your Account</h1>
+            <p class="hello-student">Hello Student</p>
+            <h1 class="sign-h1">Please Sign Your Account</h1>
             <form action="/students/store" method="POST">
-                <input type="email" name="E-mail" placeholder="E-mail" required><br>
-                <input type="password" name="password" placeholder="Password" required><br>
+                <input class="create-input" type="email" name="E-mail" placeholder="E-mail" required><br>
+                <input class="create-input" type="password" name="password" placeholder="Password" required><br>
+                <button class="create-button" type="submit">Log In</button>
                 <button type="submit">Log In</button>
         </div>
     </div>

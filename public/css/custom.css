@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
+
+/* Global resets from create/home */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-weight: bold;
+  font-family: 'Roboto Flex', sans-serif;
+  height: 100vh; /* Full height */
+}
+
+/* Home page styles */
+body.home-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ac5d2c;
+}
+
+.header {
+  margin: -0.56%;
+  padding: 0;
+  width: 105%;
+  display: flex;
+  align-items: center; /* Vertical center all children */
+  background-color: #ffffff;
+  gap: 1rem; /* Space between logo, input, icon */
+}
+
+.logo-img {
+  width: 14%;
+  margin: 0.5% 0 0.5% 3.5%; /* Adjusted left margin */
+  flex-shrink: 0;
+}
+
+.search-input {
+  flex: 1;
+  max-width: 44%;
+  border-radius: 25px;
+  background-color: #FFF7F2;
+  border: none;
+  padding: 12px 20px; /* Increased padding for center */
+  text-align: left;
+  font-size: 115%;
+  font-weight: 500;
+  color: #d2d2d2;
+}
+
+.search-icon, .search-btn {
+  width: 3.5%;
+  height: 100%; /* Match input height */
+  margin: 0;
+  flex-shrink: 0;
+  vertical-align: middle; /* Perfect center */
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.search-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.search-btn:hover .search-icon {
+  opacity: 0.7;
+}
+
+/* Create page styles (from create.css) */
+body.create-bg {
+  height: 99%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFF7F2;
+}
+
+.rectangle {
+  width: 70%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  overflow: hidden;
+}
+
+.rectangle > div:first-child {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b6b6b6;
+  width: 50%;
+}
+
+.rectangle > div:last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #C33E3E;
+}
+
+.create-input {
+  width: 80%;
+  border-radius: 20px;
+  border: none;
+  padding: 15px 20px;
+  text-align: left;
+  margin: 0.5% 0;
+  font-size: 90%;
+  font-weight: 300;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  width: 80%;
+  font-size: 105%;
+}
+
+.create-button {
+  width: 90%;
+  border-radius: 20px;
+  border: none;
+  font-size: 105%;
+  padding: 15px 20px;
+  background-color: #FFF7F2;
+  color: #C33E3E;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10%;
+}
+
+/* Classes for inline conversions */
+.hello-student {
+  font-size: 300%;
+  font-weight: bold;
+}
+
+.sign-h1 {
+  margin-top: -12%;
+  margin-bottom: 10%;
+}
+
+/* Index minimal */
