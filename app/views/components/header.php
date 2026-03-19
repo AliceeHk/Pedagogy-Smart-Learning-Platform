@@ -9,8 +9,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
 
-        /* Global resets from create/home */
-        *,
         *::before,
         *::after {
             margin: 0;
@@ -22,52 +20,72 @@
             font-weight: bold;
             font-family: 'Roboto Flex', sans-serif;
             height: 99%;
-            background-color: red;
-        }
-
-        /* Home page styles */
-        body.home-bg {
-            display: flex;
-            justify-content: center;
+            top: 0;
         }
 
         .header {
-            margin: -0.56%;
-            padding: 0;
             width: 100%;
-            height: 11%;
+            height: 8%;
             display: flex;
             align-items: center;
+            justify-content: center;
             background-color: #ffffff;
+            padding: 0.5% 0;
+            position: fixed;
+            left: 0;
+            top: 0;
+             z-index: 1000;
         }
 
         .logo-img {
-            width: 15%;
-            margin: 0.5% 11% 0.5% 3.5%;
+            width: 12%;
+            margin: 0.5% 13% 0.5% 4%;
             flex-shrink: 0;
         }
 
-        input.search-input {
-            width: 190%;
-            padding: 0.4% 3%;
-            font-size: 120%;
+        .search-input {
+            flex: 1;
+            font-size: 1.2em;
             border: none;
             background-color: #FFF7F2;
             border-radius: 25px;
             color: #9c9c9c;
             font-weight: 600;
+            padding: 0 3%;
         }
 
-        form {
-            border: none;
+        .search-form {
             display: flex;
             flex: 1;
+            width: 20%;
+            height: 74%;
             margin: 0;
+            border: none;
         }
 
-        input:focus {
+        .search-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-left: -6.5%;
+            width: 20%;
+        }
+
+        .notification-icon {
+            width: 2.3%;
+            margin-right: 5%;
+            margin-left: 8%;
+        }
+
+        .search-input:focus {
             outline: none;
             border: none;
+        }
+
+        .search-icon {
+            width: 18%;
         }
     </style>
 </head>
@@ -75,15 +93,13 @@
 <body class="home-bg">
     <div class="header">
         <img src="/assets/images/logo.png" class="logo-img" alt="Logo">
-        <form action="/students/search" method="GET" style="display: flex; flex: 1; margin: 0;">
+        <form action="/students/search" method="GET" class="search-form">
             <input class="search-input" type="search" name="search" placeholder="Search...">
             <button type="submit" class="search-btn" aria-label="Search">
-                <img src="/assets/images/icon/magnifier.png" class="search-icon" alt="Search"
-                    style="width: 22%; margin-left: -42%;">
+                <img src="/assets/images/icon/magnifier.png" class="search-icon" alt="Magnifier">
             </button>
         </form>
-        <img src="/assets/images/icon/notification.png" class="search-icon" alt="Search"
-            style="width: 2.8%; margin-right: 4.5%;">
+        <img src="/assets/images/icon/notification.png" class="notification-icon" alt="Notification">
     </div>
 </body>
 
