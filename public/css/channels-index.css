@@ -1,0 +1,181 @@
+:root {
+    --sidebar-width: 80px;
+    --header-height: 70px;
+}
+
+body {
+    margin: 0;
+    background-color: #FFF7F2;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: white;
+    z-index: 1000;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height));
+}
+
+/* CONTENT */
+.content {
+    margin-left: 9%;
+    margin-top: 5%;
+    margin-right: 1%;
+    padding: 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.left {
+    width: 75%;
+}
+
+.right {
+    width: 25%;
+    font-size: 80%;
+}
+
+/* TITLE */
+.title {
+    font-size: 190%;
+    color: #D7B483;
+    font-weight: 700;
+}
+
+/* CARD */
+.card {
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-img {
+    width: 150px;
+}
+
+.card-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 160%;
+    font-weight: bold;
+    margin-top: -2%;
+    color: #885E5E;
+}
+
+.card-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.card-icons img {
+    width: 40px;
+}
+
+.card-info {
+    color: #C9A66B;
+    font-weight: 600;
+    font-size: 130%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: -1.5%;
+    margin-bottom: 7%;
+}
+
+.card-info img {
+    width: 30px;
+}
+
+.card-button {
+    margin-top: 20px;
+}
+
+.card-button button {
+    background: #B3473E;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* LEFT TABLE */
+table.content-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.content-table td {
+    padding: 10px;
+}
+
+/* RIGHT TABLE */
+.right table {
+    width: 95%;
+    border-collapse: collapse;
+    height: 25%;
+    margin-top: -28%;
+}
+
+
+/* RIGHT CARD CUSTOM */
+.right .card-img {
+    width: 36%;
+    margin-left: 1%;
+}
+
+.right .card-title {
+    font-size: 140%;
+    margin-top: -2%;
+}
+
+.right .card-info {
+    margin-top: -4%;
+    font-size: 120%;
+    margin-bottom: 2%;
+}
+
+.right .card-button button {
+    padding: 3px 20px;
+    font-size: 110%;
+    background-color: #B4B4B4;
+    color: white;
+}
+
+.right .card {
+    padding: 12px;
+}
