@@ -5,41 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedagogy - Daftar Channel</title>
-    <style>
-        #sidebar {
-            height: 92.19vh;
-            border-collapse: separate;
-            border-spacing: 0;
-            background-color: #C33E3E;
-            width: 7%;
-            position: fixed;
-            left: 0;
-            top: 60px;
-             z-index: 1000;
-        }
-
-        tr img {
-            width: 50%;
-            justify-self: center;
-        }
-
-        .gap td {
-            height: 20%;
-            border: none;
-            position: relative;
-        }
-
-        .gap td::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50%;
-            height: 3px;
-            background-color: #FFF7F2;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
 </head>
 
 <body>

@@ -13,6 +13,7 @@ $router->add('GET', '/students/{id}', 'StudentController', 'show');
 
 // Daftar Channel
 $router->add('GET', '/channels', 'ChannelController', 'index');
+$router->add('GET', '/channels/detail', 'ChannelController', 'detail');
 
 $router->run();
 ?>

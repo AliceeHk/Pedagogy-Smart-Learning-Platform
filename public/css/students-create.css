@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&amp;display=swap");
+
+* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Flex";
+}
+
+body {
+  background-color: #fdf5f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  background: linear-gradient(to bottom, #ffe3e3, #ffa6a6);
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 1019px;
+  padding: 0px;
+  height: 616px;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageAja {
+  flex: 1;
+  padding: -1px;
+}
+
+.imageAja img {
+  width: 101%;
+  height: auto;
+  max-height: 101%;
+  object-fit: contain;
+  display: block;
+}
+
+.form-section {
+  flex: 1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.form-section h2 {
+  color: #a64444;
+  font-size: 320%;
+}
+
+.form-section p {
+  color: #a64444;
+  font-weight: bold;
+  margin-bottom: 40px;
+  font-size: 200%;
+}
+
+input {
+  width: 80%;
+  padding: 10px 20px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  font-size: 102%;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  color: #888;
+  cursor: pointer;
+}
+
+.login-btn {
+  width: 80%;
+  padding: 13px;
+  background-color: #b54b4b;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s;
+  font-size: 120%;
+}
+
+.login-btn:hover {
+  background-color: #8e3a3a;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .imageAja {
+    display: none;
+  }
+}

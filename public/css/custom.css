@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
 
-/* Global resets from create/home */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -9,11 +8,10 @@
 
 html, body {
   font-weight: bold;
-  font-family: 'Roboto Flex', sans-serif;
-  height: 100vh; /* Full height */
+  font-family: 'Roboto Flex';
+  height: 100vh; 
 }
 
-/* Home page styles */
 body.home-bg {
   display: flex;
   justify-content: center;
@@ -26,14 +24,14 @@ body.home-bg {
   padding: 0;
   width: 105%;
   display: flex;
-  align-items: center; /* Vertical center all children */
+  align-items: center; 
   background-color: #ffffff;
-  gap: 1rem; /* Space between logo, input, icon */
+  gap: 1rem; 
 }
 
 .logo-img {
   width: 14%;
-  margin: 0.5% 0 0.5% 3.5%; /* Adjusted left margin */
+  margin: 0.5% 0 0.5% 3.5%; 
   flex-shrink: 0;
 }
 
@@ -43,7 +41,7 @@ body.home-bg {
   border-radius: 25px;
   background-color: #FFF7F2;
   border: none;
-  padding: 12px 20px; /* Increased padding for center */
+  padding: 12px 20px; 
   text-align: left;
   font-size: 115%;
   font-weight: 500;
@@ -52,10 +50,10 @@ body.home-bg {
 
 .search-icon, .search-btn {
   width: 3.5%;
-  height: 100%; /* Match input height */
+  height: 100%; 
   margin: 0;
   flex-shrink: 0;
-  vertical-align: middle; /* Perfect center */
+  vertical-align: middle; 
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -75,7 +73,6 @@ body.home-bg {
   opacity: 0.7;
 }
 
-/* Create page styles (from create.css) */
 body.create-bg {
   height: 99%;
   display: flex;
@@ -146,7 +143,6 @@ form {
   margin-top: 10%;
 }
 
-/* Classes for inline conversions */
 .hello-student {
   font-size: 300%;
   font-weight: bold;
@@ -156,5 +152,3 @@ form {
   margin-top: -12%;
   margin-bottom: 10%;
 }
-
-/* Index minimal */

@@ -7,6 +7,10 @@ class ChannelController {
     {
         require_once '../app/views/channels/index.php';
     }
+    public function detail() 
+    {
+        require_once '../app/views/channels/deskripsi.php';
+    }
 }
 
 

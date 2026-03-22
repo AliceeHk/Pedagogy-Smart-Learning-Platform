@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+z<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,6 +17,7 @@
         <div class="content-wrapper">
             <div class="left">
                 <p class="title">Daftar Channels (4)</p>
+                <a href="/channels/detail" class="see-all">
                 <table class="content-table">
                     <tr>
                         <td>
@@ -44,6 +45,7 @@
                         </td>
                     </tr>
                 </table>
+                </a>
                 <table class="content-table">
                     <tr>
                         <td>

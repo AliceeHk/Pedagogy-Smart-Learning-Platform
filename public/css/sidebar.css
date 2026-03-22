@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&amp;display=swap');
+
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-weight: bold;
+    font-family: 'Roboto Flex';
+    height: 99%;
+    top: 0;
+}
+
+#sidebar {
+    height: 92.19vh;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #C33E3E;
+    width: 7%;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    z-index: 1000;
+}
+
+tr img {
+    width: 50%;
+    justify-self: center;
+}
+
+.gap td {
+    height: 20%;
+    border: none;
+    position: relative;
+}
+
+.gap td::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background-color: #FFF7F2;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        height: auto;
+        width: 100vw;
+        position: absolute;
+        top: 83.5vh;
+        background-color: #C33E3E;
+        z-index: 9999;
+        padding: 10px 16px;
+    }
+
+    /* Remove table layout completely */
+    #sidebar table {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100vw;
+        padding: 0;
+        border: none;
+    }
+
+    tr img {
+        width: 80%;
+        justify-self: center;
+    }
+
+    /* Make each row a flex item - side by side */
+    #sidebar tr {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        flex: 0 1 auto;
+        padding: 0 0 0 9.5%;
+    }
+
+    /* Hide separator rows */
+    #sidebar .gap {
+        display: none;
+    }
+
+    /* Remove the last icon row */
+    #sidebar tr:last-of-type {
+        display: none;
+    }
+
+    /* Make cells block level */
+    #sidebar td {
+        display: block;
+        text-align: center;
+    }
+
+    /* Make images smaller and centered with spacing */
+    tr img {
+        width: 28px !important;
+        display: block;
+        margin: 0 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    tr img {
+        width: 22px !important;
+        margin: 0 10px;
+    }
+}

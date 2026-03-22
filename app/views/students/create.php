@@ -1,25 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Siswa</title>
-    <link rel="stylesheet" href="/css/output.css">
-    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/students-create.css">
 </head>
-<body class="create-bg">
-    <div class="rectangle">
-        <div>
-            <img src="/assets/images/hasil.png" alt="Gambar">
+
+<body>
+    <div class="login-container">
+        <div class="imageAja">
+            <img src="/assets/images/login-image.png" alt="Login image">
         </div>
-        <div>
-            <p class="hello-student">Hello Student</p>
-            <h1 class="sign-h1">Please Sign Your Account</h1>
-            <form action="/students/store" method="POST">
-                <input class="create-input" type="email" name="E-mail" placeholder="E-mail" required><br>
-                <input class="create-input" type="password" name="password" placeholder="Password" required><br>
-                <button class="create-button" type="submit">Log In</button>
-                <button type="submit">Log In</button>
+
+        <div class="form-section">
+            <h2>Hello Student!</h2>
+            <p>Please Sign Your Account</p>
+
+                <form action="/login" method="POST">
+                    <input type="email" name="email" placeholder="Email" required>
+
+                    <input type="password" name="password" placeholder="Password" required>
+
+                    <button type="submit" class="login-btn">LOG IN</button>
+                </form>
         </div>
     </div>
 </body>
