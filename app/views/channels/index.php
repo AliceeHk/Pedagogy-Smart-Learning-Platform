@@ -213,9 +213,6 @@
             </div>
         </div>
     </div>
-
-    <div class="footer">
-        <?php include_once __DIR__ . '/../components/footer.php'; ?>
-    </div>
+    <?php include_once __DIR__ . '/../components/footer.php'; ?>
 </body>
 </html>

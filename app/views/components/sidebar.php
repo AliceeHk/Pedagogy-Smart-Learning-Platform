@@ -11,9 +11,7 @@
 </head>
 
 <body>
-    <?php
-    include_once __DIR__ . '/../components/header.php';
-    ?>
+    
     <div class="sidebar">
         <table id="sidebar">
             <tr>
