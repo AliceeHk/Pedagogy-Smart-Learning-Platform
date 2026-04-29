@@ -15,5 +15,8 @@ $router->add('GET', '/students/{id}', 'StudentController', 'show');
 $router->add('GET', '/channels', 'ChannelController', 'index');
 $router->add('GET', '/channels/detail', 'ChannelController', 'detail');
 
+
+// Daftar Informasi
+$router->add('GET', '/informations', 'InformationController', 'index');
 $router->run();
 ?>
