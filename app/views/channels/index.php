@@ -213,5 +213,9 @@ z<!DOCTYPE html>
             </div>
         </div>
     </div>
+
+    <div class="footer">
+        <?php include_once __DIR__ . '/../components/footer.php'; ?>
+    </div>
 </body>
 </html>
