@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
+
 .footer {
-    background-color: #C33E3E;
+    background-color: #b3473e;
     color: white;
-    padding: 20px 30px;
-    font-family: Arial, sans-serif;
+    padding: 30px 100px;
+    font-family: 'Roboto Flex';
+    width: auto;
+    margin-left: 5%;
 }
 
 .footer-container {
@@ -41,8 +45,18 @@
 
 .footer-bottom {
     display: flex;
-    gap: 350px;
-    align-items: flex-start;
+    gap: 300px;
+    align-items:flex-start;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.social div {
+    display: flex;
+}
+
+.download div {
+    display: flex;
 }
 
 .social img,
