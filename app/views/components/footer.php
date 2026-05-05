@@ -64,5 +64,38 @@
         </div>
     </footer>
 
+    <script>
+    function openSearch() 
+    {
+        document.getElementById("overlay").style.display = "block";
+
+        let modal = document.getElementById("searchModal");
+        modal.style.display = "block";
+
+        setTimeout(() => {
+            modal.classList.add("active");
+        }, 10);
+    }
+
+    function closeSearch() 
+    {
+        let modal = document.getElementById("searchModal");
+
+        modal.classList.remove("active");
+
+        setTimeout(() => {
+            modal.style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }, 300);
+    }
+
+    function fillSearch(text) 
+    {
+        document.querySelector(".search-input").value = text;
+        closeSearch();
+    }
+    </script>
+
+
 </body>
 </html>
