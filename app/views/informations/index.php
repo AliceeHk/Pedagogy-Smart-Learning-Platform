@@ -66,6 +66,7 @@
             </div>
         </div>
     </div>
+    <?php include_once __DIR__ . '/../components/footer.php'; ?>
     <script>
         const slider = document.querySelector('.scroll-container');
 
