@@ -22,7 +22,7 @@
                         <i class="fas fa-arrow-left"></i>
                     </div>
                     <div class="course-image">
-                        <img src="/assets/images/profile/Matematika.png" alt="Matematika Dasar Aljabar">
+                        <img src="<?= $row['profile_picture'] ?>">
                     </div>
                 </div>  
                 

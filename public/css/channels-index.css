@@ -164,9 +164,8 @@ table.content-table td {
 .right table {
   width: 95%;
   border-collapse: collapse;
-  height: 25%;
-  margin-top: -21%;
   margin-bottom: 7%;
+  margin-top: 2%;
 }
 
 .right .card-img {
