@@ -1,218 +1,141 @@
+<?php
+$conn = new mysqli("localhost", "root", "", "pedagogy");
+
+$query = "
+SELECT 
+    c.id,
+    c.nama_channel,
+    c.profile_picture,
+    u.nama AS guru,
+    COALESCE(COUNT(cm.user_id), 0) AS jumlah_anggota
+FROM channels c
+JOIN users u ON c.user_id = u.id
+LEFT JOIN channel_members cm ON c.id = cm.channel_id
+GROUP BY c.id, c.nama_channel, c.profile_picture, u.nama
+";
+
+$result = $conn->query($query);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedagogy - Daftar Channel</title>
     <link rel="stylesheet" href="/css/channels-index.css">
 </head>
+
 <body>
+
     <div class="header">
         <?php include_once __DIR__ . '/../components/header.php'; ?>
     </div>
+
     <div class="sidebar">
         <?php include_once __DIR__ . '/../components/sidebar.php'; ?>
     </div>
+
     <div class="content">
         <div class="content-wrapper">
+
             <div class="left">
-                <p class="title">Daftar Channels (4)</p>
-                <a href="/channels/detail" class="see-all">
-                <table class="content-table">
-                    <tr>
-                        <td>
-                            <div class="card">
-                                <div class="card-img">
-                                    <img src="assets/images/profile/Matematika.png" alt="">
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-header">
-                                        <div class="card-title">Matematika Dasar Aljabar</div>
-                                        <div class="card-icons">
-                                            <img src="/assets/images/icon/channel-notification.png">
-                                            <img src="/assets/images/icon/channel-report.png">
+                <p class="title">Daftar Channels (<?= $result->num_rows ?>)</p>
+
+                <?php while ($row = $result->fetch_assoc()): ?>
+                    <a href="/channels/detail" class="see-all">
+                        <table class="content-table">
+                            <tr>
+                                <td>
+                                    <div class="card">
+                                        <div class="card-img">
+                                            <img src="<?= '/' . ltrim($row['profile_picture'], '/') ?>" alt="">
+                                        </div>
+
+                                        <div class="card-content">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <?= $row['nama_channel'] ?>
+                                                </div>
+                                                <div class="card-icons">
+                                                    <img src="/assets/images/icon/channel-notification.png">
+                                                    <img src="/assets/images/icon/channel-report.png">
+                                                </div>
+                                            </div>
+
+                                            <div class="card-info">
+                                                <img src="/assets/images/icon/channel-teachers.png">
+                                                <?= $row['guru'] ?> |
+
+                                                <img src="/assets/images/icon/channel-members.png">
+                                                <?= $row['jumlah_anggota'] >= 100
+                                                    ? $row['jumlah_anggota'] . '+'
+                                                    : $row['jumlah_anggota'] ?>
+                                            </div>
+
+                                            <div class="card-button">
+                                                <button>Unfollow</button>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="card-info">
-                                        <img src="/assets/images/icon/channel-teachers.png"> Yulisan |
-                                        <img src="/assets/images/icon/channel-members.png">120+
-                                    </div>
-                                    <div class="card-button">
-                                        <button>Unfollow</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                </a>
-                <table class="content-table">
-                    <tr>
-                        <td>
-                            <div class="card">
-                                <div class="card-img">
-                                    <img src="assets/images/profile/Biology Kelas 10.png" alt="">
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-header">
-                                        <div class="card-title">Biology Kelas 10</div>
-                                        <div class="card-icons">
-                                            <img src="/assets/images/icon/channel-notification.png">
-                                            <img src="/assets/images/icon/channel-report.png">
-                                        </div>
-                                    </div>
-                                    <div class="card-info">
-                                        <img src="/assets/images/icon/channel-teachers.png"> Merza |
-                                        <img src="/assets/images/icon/channel-members.png">98+
-                                    </div>
-                                    <div class="card-button">
-                                        <button>Unfollow</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <table class="content-table">
-                    <tr>
-                        <td>
-                            <div class="card">
-                                <div class="card-img">
-                                    <img src="assets/images/profile/Seni Budaya.png" alt="">
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-header">
-                                        <div class="card-title">Seni Budaya | LKS 10A</div>
-                                        <div class="card-icons">
-                                            <img src="/assets/images/icon/channel-notification.png">
-                                            <img src="/assets/images/icon/channel-report.png">
-                                        </div>
-                                    </div>
-                                    <div class="card-info">
-                                        <img src="/assets/images/icon/channel-teachers.png"> Susanto |
-                                        <img src="/assets/images/icon/channel-members.png">87+
-                                    </div>
-                                    <div class="card-button">
-                                        <button>Unfollow</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <table class="content-table">
-                    <tr>
-                        <td>
-                            <div class="card">
-                                <div class="card-img">
-                                    <img src="assets/images/profile/Piano Dasar.png" alt="">
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-header">
-                                        <div class="card-title">Piano Dasar</div>
-                                        <div class="card-icons">
-                                            <img src="/assets/images/icon/channel-notification.png">
-                                            <img src="/assets/images/icon/channel-report.png">
-                                        </div>
-                                    </div>
-                                    <div class="card-info">
-                                        <img src="/assets/images/icon/channel-teachers.png"> Hako |
-                                        <img src="/assets/images/icon/channel-members.png">240+
-                                    </div>
-                                    <div class="card-button">
-                                        <button>Unfollow</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </a>
+                <?php endwhile; ?>
             </div>
+
             <div class="right">
-                <p class="title" style="margin-bottom: 17%;">Other Channels</p>
-                <table>
-                    <tr>
-                        <td>
-                            <div class="card">
-                                <div class="card-img">
-                                    <img src="/assets/images/profile/Biola Dasar.png">
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-header">
-                                        <div class="card-title">Biola Dasar</div>
+                <p class="title" style="margin-bottom: 6.4%;">Other Channels</p>
+
+                <?php
+                $other = $conn->query("
+                SELECT c.id, c.nama_channel, c.profile_picture, u.nama AS guru
+                FROM channels c
+                JOIN users u ON c.user_id = u.id
+                LIMIT 4
+            ");
+                ?>
+
+                <?php while ($row = $other->fetch_assoc()): ?>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="<?= $row['profile_picture'] ?>">
                                     </div>
-                                    <div class="card-info">Hako</div>
-                                    <div class="card-button">
-                                        <button>See Detail</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <td>
-                            <div class="card">
-                                <div class="card-img">
-                                    <img src="/assets/images/profile/Fisika.png">
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-header">
-                                        <div class="card-title">Fisika</div>
-                                    </div>
-                                    <div class="card-info">Hadina</div>
-                                    <div class="card-button">
-                                        <button>See Detail</button>
+                                    <div class="card-content">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <?= $row['nama_channel'] ?>
+                                            </div>
+                                        </div>
+                                        <div class="card-info">
+                                            <?= $row['guru'] ?>
+                                        </div>
+                                        <div class="card-button">
+                                            <a href="/channels/detail.php?id=<?= $row['id'] ?>">
+                                                <button>See Detail</button>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <td>
-                            <div class="card">
-                                <div class="card-img">
-                                    <img src="/assets/images/profile/Sejarah.png">
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-header">
-                                        <div class="card-title">Sejarah</div>
-                                    </div>
-                                    <div class="card-info">Orsiana</div>
-                                    <div class="card-button">
-                                        <button>See Detail</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <td>
-                            <div class="card">
-                                <div class="card-img">
-                                    <img src="/assets/images/profile/Chinese.png">
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-header">
-                                        <div class="card-title">Chinese</div>
-                                    </div>
-                                    <div class="card-info">Kwee Sun</div>
-                                    <div class="card-button">
-                                        <button>See Detail</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                            </td>
+                        </tr>
+                    </table>
+                <?php endwhile; ?>
+
             </div>
+
         </div>
     </div>
+
+    <footer class="footer">
+        <?php include_once __DIR__ . '/../components/footer.php'; ?>
+    </footer>
     <?php include_once __DIR__ . '/../components/footer.php'; ?>
 </body>
+
 </html>
