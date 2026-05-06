@@ -21,7 +21,7 @@
                 <td><a href="/channels"><img src="/assets/images/icon/task.png" alt="task"></a></td>
             </tr>
             <tr>
-                <td><a href="/channels"><img src="/assets/images/icon/information.png" alt="information"></a></td>
+                <td><a href="/informations"><img src="/assets/images/icon/information.png" alt="information"></a></td>
             </tr>
             <tr>
                 <td><a href="/channels"><img src="/assets/images/icon/profile.png" alt="profile"></a></td>
