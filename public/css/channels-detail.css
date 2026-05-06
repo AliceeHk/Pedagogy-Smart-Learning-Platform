@@ -306,12 +306,12 @@ body {
 
 .channel-card {
     flex: 0 0 auto;
-    width: 180px;
-    text-align: right; 
+    /* width: 180px; */
+    text-align: center; 
 }
 
 .channel-card img {
-    width: 150%; 
+    width: 270px; 
     height: 270px; 
     object-fit: cover; 
     border-radius: 12px; 

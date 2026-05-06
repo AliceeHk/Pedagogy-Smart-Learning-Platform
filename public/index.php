@@ -18,5 +18,11 @@ $router->add('GET', '/channels/detail', 'ChannelController', 'detail');
 
 // Daftar Informasi
 $router->add('GET', '/informations', 'InformationController', 'index');
+
+$router->add('GET', '/home', 'HomeController', 'index');
+
 $router->run();
 ?>
+
+ <!-- home page -->
+

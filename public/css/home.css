@@ -1,0 +1,209 @@
+:root {
+    --bg-color: #fff1f1;
+    --text-maroon: #6a040f;
+    --text-grey: #6c757d;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--bg-color);
+}
+
+.your-progress-section {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 15px;
+}
+
+.progress-header h2 {
+    color: #8b5e5e; /* Warna maroon kecokelatan sesuai gambar */
+    font-size: 24px;
+    margin: 0;
+}
+
+.see-detail {
+    color: #b5b5b5;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.progress-cards-container {
+    display: flex;
+    gap: 20px; /* Jarak antar dua kartu */
+}
+
+.progress-card-item {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    flex: 1; /* Membuat kedua kartu memiliki lebar yang sama */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.item-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 15px;
+}
+
+.item-row:last-child {
+    margin-bottom: 0;
+}
+
+.subject {
+    font-size: 13px;
+    color: #4a4a4a;
+    width: 100px; /* Lebar tetap untuk teks mata pelajaran agar sejajar */
+    line-height: 1.2;
+}
+
+.progress-bar-wrapper {
+    flex-grow: 1; /* Bar akan mengambil sisa ruang yang ada */
+}
+
+.bar-bg {
+    height: 6px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: #707070; /* Warna bar abu-abu tua sesuai gambar */
+    border-radius: 10px;
+}
+
+.percentage {
+    font-size: 13px;
+    color: #4a4a4a;
+    width: 35px;
+    text-align: right;
+}
+
+/* Container Utama */
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Memungkinkan header memanjang di atas */
+    min-height: 100vh;
+}
+
+/* Sidebar Wrapper */
+.sidebar {
+    width: 80px; /* Sesuaikan dengan lebar icon sidebar kamu */
+    min-height: 100vh;
+    flex-shrink: 0;
+}
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 25px 40px;
+    min-width: 0; /* Mencegah konten meluap dari grid */
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #e0c8c8; /* Warna garis abu-abu kemerahan tipis */
+    margin: 30px 0; /* Memberikan jarak atas dan bawah garis */
+    width: 100%;
+    opacity: 0.6;
+}
+
+/* Tambahan agar section konten memiliki jarak yang pas */
+.content-section {
+    margin-top: 10px;
+}
+
+h2 {
+    color: var(--text-maroon);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Header di dalam konten */
+.content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.brand-name {
+    font-weight: bold;
+    color: #d62828;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+/* Profile Section - Perbaikan Tata Letak */
+.profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.profile-info {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.avatar img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: #eee;
+}
+
+/* Progress Card */
+.progress-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    width: 320px;
+    flex-shrink: 0;
+}
+
+/* Grids - Menggunakan Responsive Grid */
+.grid-container-motive {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.grid-container-channels {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.card-img img, .channel-card img {
+    width: 100%;
+    border-radius: 12px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    background-color: #ddd; /* Menghindari area kosong jika gambar belum dimuat */
+}
+
+.channel-card p {
+    font-weight: 600;
+    color: var(--text-maroon);
+    font-size: 14px;
+    margin-top: 10px;
+}
