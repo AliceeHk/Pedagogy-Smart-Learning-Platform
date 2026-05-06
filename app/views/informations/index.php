@@ -44,6 +44,9 @@
                 <img src="assets/images/poster/Information - Summer Camp.png" alt="">
             </div>
         </div>
+    </div> 
+    
+    <?php include_once __DIR__ . '/../components/footer.php'; ?>
 </body>
 
 </html>

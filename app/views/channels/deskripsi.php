@@ -116,5 +116,7 @@
             <?php endforeach; ?>
         </div>
     </main>
+    
+    <?php include_once __DIR__ . '/../components/footer.php'; ?>
 </body>
 </html>

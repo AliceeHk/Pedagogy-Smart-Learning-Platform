@@ -1,22 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+    
 .footer {
     background-color: #b3473e;
     color: white;
-    padding: 30px 100px;
-    font-family: 'Roboto Flex';
-    width: auto;
-    margin-left: 5%;
+    padding: 30px 5%;
+    font-family: 'Roboto Flex', sans-serif;
+    width: 100%;
+    padding-left: 180px;
 }
 
 .footer-container {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .footer-col {
     flex: 1;
+    min-width: 200px;
 }
 
 .footer-col h2 {
@@ -28,14 +45,14 @@
     padding: 0;
 }
 
-.footer-col ul a {
+.footer-col ul li {
     margin-bottom: 8px;
 }
 
 .footer-col ul li a {
     color: white;
     text-decoration: none;
-    font-weight:300;
+    font-weight: 300;
 }
 
 .footer-col p {
@@ -45,18 +62,15 @@
 
 .footer-bottom {
     display: flex;
-    gap: 300px;
-    align-items:flex-start;
+    flex-wrap: wrap;
+    gap: 285px; 
     margin-top: 50px;
-    margin-bottom: 20px;
 }
 
-.social div {
-    display: flex;
-}
-
+.social div,
 .download div {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .social img,
@@ -66,11 +80,8 @@
     cursor: pointer;
 }
 
-.social h2,
-.download h2 {
-    margin-bottom: 8px;
-}
-
 .branding {
     text-align: center;
+    padding-left: 30px;
 }
+
