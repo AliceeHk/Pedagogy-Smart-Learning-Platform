@@ -135,6 +135,7 @@ $result = $conn->query($query);
     <footer class="footer">
         <?php include_once __DIR__ . '/../components/footer.php'; ?>
     </footer>
+    <?php include_once __DIR__ . '/../components/footer.php'; ?>
 </body>
 
 </html>

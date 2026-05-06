@@ -40,16 +40,20 @@
 
             <div class="social">
                 <h2>Connect with us</h2>
-                <img src="/assets/images/footer/facebook.png">
-                <img src="/assets/images/footer/instagram.png">
-                <img src="/assets/images/footer/twitter.png">
-                <img src="/assets/images/footer/youtube.png">
+                <div>
+                    <img src="/assets/images/footer/facebook.png">
+                    <img src="/assets/images/footer/instagram.png">
+                    <img src="/assets/images/footer/twitter.png">
+                    <img src="/assets/images/footer/youtube.png">
+                </div>
             </div>
 
             <div class="download">
                 <h2>Download the app</h2>
-                <img src="/assets/images/footer/apple.png">
-                <img src="/assets/images/footer/playstore.png">
+                <div>
+                    <img src="/assets/images/footer/apple.png">
+                    <img src="/assets/images/footer/playstore.png">
+                </div>
             </div>
 
             <div class="branding">
@@ -59,6 +63,39 @@
 
         </div>
     </footer>
+
+    <script>
+    function openSearch() 
+    {
+        document.getElementById("overlay").style.display = "block";
+
+        let modal = document.getElementById("searchModal");
+        modal.style.display = "block";
+
+        setTimeout(() => {
+            modal.classList.add("active");
+        }, 10);
+    }
+
+    function closeSearch() 
+    {
+        let modal = document.getElementById("searchModal");
+
+        modal.classList.remove("active");
+
+        setTimeout(() => {
+            modal.style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }, 300);
+    }
+
+    function fillSearch(text) 
+    {
+        document.querySelector(".search-input").value = text;
+        closeSearch();
+    }
+    </script>
+
 
 </body>
 </html>
