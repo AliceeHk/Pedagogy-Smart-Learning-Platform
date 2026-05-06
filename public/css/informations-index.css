@@ -1,0 +1,99 @@
+ @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&amp;display=swap");
+
+ *::before,
+ *::after {
+     margin: 0;
+     padding: 0;
+ }
+
+ html,
+ body {
+     font-weight: bold;
+     font-family: "Roboto Flex";
+     height: 99%;
+     top: 0;
+ }
+
+ :root {
+     --sidebar-width: 80px;
+     --header-height: 70px;
+ }
+
+ body {
+     margin: 0;
+     background-color: #fff7f2;
+ }
+
+ .header {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: var(--header-height);
+     background: white;
+     z-index: 1000;
+ }
+
+ .sidebar {
+     position: fixed;
+     top: var(--header-height);
+     left: 0;
+     width: var(--sidebar-width);
+     height: calc(100vh - var(--header-height));
+ }
+
+ @media (max-width: 768px) {
+     .sidebar {
+         bottom: 0 !important;
+         z-index: 10001 !important;
+     }
+ }
+
+
+ .content {
+     margin-left: 9%;
+     margin-top: 3%;
+     margin-right: 1%;
+     padding: 20px;
+ }
+
+ .content-wrapper {
+     display: flex;
+     gap: 20px;
+ }
+
+ .scroll-wrapper {
+     overflow: hidden;
+ }
+
+ .scroll-container {
+     display: flex;
+     gap: 40px;
+     overflow-x: auto;
+     scroll-behavior: smooth;
+     cursor: grab;
+     scrollbar-width: none;
+ }
+
+ .scroll-container.active {
+     cursor: grabbing;
+ }
+
+ .scroll-container::-webkit-scrollbar {
+     display: none;
+ }
+
+ .scroll-container img {
+     height: 400px;
+     flex-shrink: 0;
+     border-radius: 10px;
+     cursor: grab;
+     user-drag: none;
+     -webkit-user-drag: none;
+ }
+
+ .title {
+  font-size: 190%;
+  color: #d7b483;
+  font-weight: 700;
+}
