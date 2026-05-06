@@ -8,5 +8,5 @@
         <span onclick="fillSearch('Lomba bulan april apa?')">Lomba bulan april apa?</span>
     </div>
 
-    <img src="/assets/images/question.png" alt="gambar">
+    <img src="/assets/images/question.png" alt="search">
 </div>

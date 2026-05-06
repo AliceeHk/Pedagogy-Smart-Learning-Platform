@@ -6,7 +6,7 @@
     height: 100%;
 
     background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(3px);
+    backdrop-filter: brightness(75%);
 
     display: none;
     z-index: 10;
@@ -42,7 +42,8 @@
     gap: 10px;
 
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    margin-top: 40px;
 }
 
 .suggestions span {
@@ -62,7 +63,7 @@
 
 
 .search-modal img {
-    width: 400px;
+    width: 425px;
     display: block;
     margin: 10px auto 0;
 }

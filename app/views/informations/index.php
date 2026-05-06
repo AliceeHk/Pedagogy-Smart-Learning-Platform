@@ -34,6 +34,9 @@
                 </div>
             </div>
         </div>
+    </div> 
+    
+    <?php include_once __DIR__ . '/../components/footer.php'; ?>
     </div>
     <script src="/js/informations-index.js"></script>
 </body>
