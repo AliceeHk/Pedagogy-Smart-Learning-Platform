@@ -6,7 +6,7 @@
 }
 
 body {
-    margin: 0;
+    margin: 15px;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-color);
@@ -27,7 +27,7 @@ body {
 /* Main Content Area */
 .main-content {
     flex: 1;
-    padding: 40px;
+    padding: 100px;
 }
 
 /* Top Section: Profil & Progress */
@@ -87,13 +87,13 @@ body {
 .progress-header-inline h3 {
     color: var(--text-maroon);
     margin: 0;
-    font-size: 18px;
+    font-size: 25px;
 }
 
 .see-detail {
     color: #bbb;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 20px;
 }
 
 .progress-cards-flex {
