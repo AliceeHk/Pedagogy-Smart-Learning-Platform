@@ -1,4 +1,3 @@
-
 :root {
     --bg-krem: #fdf7f2;
     --merah-utama: #c74343;
@@ -14,36 +13,70 @@
     box-sizing: border-box;
 }
 
+/* BODY */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-krem);
-    display: flex;
+    overflow-x: hidden;
 }
 
-.content {
-    margin-left: 130px; 
-    padding: 40px 60px;
+/* HEADER */
+.header {
     width: 100%;
+    position: relative;
+    z-index: 1000;
+}
+
+/* MAIN LAYOUT */
+.main-layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 130px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 999;
+    background: transparent;
+}
+
+/* CONTENT */
+.content {
+    margin-left: 130px;
+    padding: 40px 60px;
+    width: calc(100% - 130px);
     margin-top: 40px;
 }
 
+/* FOOTER */
+.footer {
+    margin-left: 130px;
+}
+
+/* ICONS */
 .action-icons i {
-    color: #885E5E;       
-    font-size: 25px;      
-    margin-left: 15px;   
-    cursor: pointer;     
+    color: #885E5E;
+    font-size: 25px;
+    margin-left: 15px;
+    cursor: pointer;
     transition: color 0.3s ease;
 }
 
+/* COURSE CARD */
 .course-card {
     position: relative;
     background: #fdf7f2;
     border-radius: 20px;
     padding: 30px;
     display: flex;
-    position: relative;
     margin-bottom: 30px;
 }
 
@@ -56,26 +89,27 @@ body {
 
 .course-header-left {
     display: flex;
-    align-items: flex-start; 
-    gap: 15px; 
+    align-items: flex-start;
+    gap: 15px;
 }
 
+/* BACK BUTTON */
 .back-arrow-inline {
     font-size: 40px;
-    color: #d1b4a3; 
+    color: #d1b4a3;
     position: relative;
-    left: -80px; 
+    left: -80px;
     cursor: pointer;
-    margin-top: -25px; 
+    margin-top: -25px;
     transition: 0.3s;
-    
 }
 
 .back-arrow-inline:hover {
     color: var(--merah-utama);
-    transform: translateX(-5px); 
+    transform: translateX(-5px);
 }
 
+/* IMAGE */
 .course-image img {
     width: 300px;
     height: 300px;
@@ -84,15 +118,17 @@ body {
     object-fit: cover;
     border-radius: 15px;
     position: relative;
-    left: -50px; 
+    left: -50px;
 }
 
+/* DETAILS */
 .course-details {
     flex: 1;
     position: relative;
-    left: -30px; 
+    left: -30px;
 }
 
+/* TITLE */
 .title-row {
     display: flex;
     align-items: center;
@@ -106,14 +142,14 @@ body {
     color: #885E5E;
 }
 
-
+/* INSTRUCTOR */
 .instructor {
-    color: var(--grey-text);
     margin: 10px 0;
     font-size: 20px;
     color: #D7B483;
 }
 
+/* INTRO */
 .intro-heading {
     color: var(--merah-utama);
     margin: 10px 0 5px 0;
@@ -121,12 +157,14 @@ body {
     font-size: 26px;
 }
 
+/* DESCRIPTION */
 .description {
     font-size: 20px;
     line-height: 1.6;
     color: #555;
-} 
+}
 
+/* FOLLOW BUTTON */
 .follow-checkbox {
     display: none;
 }
@@ -147,16 +185,27 @@ body {
     margin-top: 29px;
 }
 
-.text-follow { display: none; }
-.text-unfollow { display: inline; }
+.text-follow {
+    display: none;
+}
+
+.text-unfollow {
+    display: inline;
+}
 
 .follow-checkbox:checked + .btn-toggle {
     background-color: #2ecc71;
 }
 
-.follow-checkbox:checked + .btn-toggle .text-unfollow { display: none; }
-.follow-checkbox:checked + .btn-toggle .text-follow { display: inline; }
+.follow-checkbox:checked + .btn-toggle .text-unfollow {
+    display: none;
+}
 
+.follow-checkbox:checked + .btn-toggle .text-follow {
+    display: inline;
+}
+
+/* STATS GRID */
 .stats-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -164,6 +213,7 @@ body {
     margin-bottom: 30px;
 }
 
+/* CARD */
 .card {
     background: var(--white);
     padding: 25px;
@@ -173,6 +223,7 @@ body {
     justify-content: center;
 }
 
+/* RATING BAR */
 .bar-item {
     display: flex;
     align-items: center;
@@ -182,7 +233,6 @@ body {
 }
 
 .progress-bg {
-    height: 12;
     flex-grow: 1;
     background: #f0f0f0;
     height: 10px;
@@ -195,25 +245,27 @@ body {
     border-radius: 5px;
 }
 
+/* SUMMARY */
 .rating-summary {
-    background-color:#FFDC86;
+    background-color: #FFDC86;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size:25px;
+    font-size: 25px;
     font-weight: bold;
     color: #5E5E5E;
 }
 
 .rating-summary .big-num {
-    color: #FFB700;      
-    font-size: 35px;     
+    color: #FFB700;
+    font-size: 35px;
     font-weight: 800;
     margin-bottom: 15px;
-    display: block;      
+    display: block;
 }
 
+/* COUNT */
 .count {
     min-width: 25px;
     text-align: right;
@@ -222,11 +274,30 @@ body {
     font-weight: bold;
 }
 
+/* STAR LABEL */
+.label-star {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 90px;
+    font-size: 20px;
+    color: #C33E3E;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.label-star i {
+    color: #FFB700 !important;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+/* RATING */
 .rating-wrapper {
     display: flex;
-    flex-direction: row-reverse; 
+    flex-direction: row-reverse;
     justify-content: center;
-    gap: 8px; 
+    gap: 8px;
     margin-top: 15px;
 }
 
@@ -239,28 +310,10 @@ body {
     color: #e0e0e0;
     cursor: pointer;
     transition: color 0.2s, transform 0.2s;
-}   
-
-.label-star {
-   display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    min-width: 90px;
-    font-size: 20px;
-    color: #C33E3E; 
-    font-weight: 600;
-    text-transform: capitalize;
-}
-
-.label-star i {
-    color: #FFB700 !important;
-    
-    font-size: 20px; 
-    margin-left: 10px; 
 }
 
 .rating-wrapper input:checked ~ label {
-    color: #ffc107; 
+    color: #ffc107;
 }
 
 .rating-wrapper label:hover,
@@ -269,69 +322,70 @@ body {
 }
 
 .rating-wrapper label:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
-.big-num { font-size: 50px; font-weight: bold; }
-.stars-gold { 
-    color: #FFB700; 
-    font-size: 40px; 
-    margin: 5px 0; 
+/* BIG NUMBER */
+.big-num {
+    font-size: 50px;
+    font-weight: bold;
 }
 
-.give-rating { 
+.stars-gold {
+    color: #FFB700;
+    font-size: 40px;
+    margin: 5px 0;
+}
+
+/* GIVE RATING */
+.give-rating {
     text-align: center;
-    padding: 20px; 
+    padding: 20px;
     color: #5E5E5E;
     font-weight: bold;
 }
 
 .card.give-rating .rating-wrapper label {
-    font-size: 40px;     
+    font-size: 40px;
 }
 
 .card.give-rating p {
-    font-size: 30px;     
+    font-size: 30px;
     margin-bottom: 40px;
 }
 
+/* CHANNEL LIST */
 .channel-list {
-    display: flex; 
-    gap: 170px; 
+    display: flex;
+    gap: 40px;
     margin-top: 20px;
     flex-wrap: nowrap;
-    overflow-x: auto; 
-    padding-bottom: 10px; 
+    overflow-x: auto;
+    padding-bottom: 10px;
 }
 
+/* CHANNEL CARD */
 .channel-card {
     flex: 0 0 auto;
-    width: 180px;
-    text-align: right; 
+    width: 200px;
+    text-align: center;
 }
 
 .channel-card img {
-    width: 150%; 
-    height: 270px; 
-    object-fit: cover; 
-    border-radius: 12px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-    display: block; 
-    margin-bottom: 10px; 
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-bottom: 10px;
 }
 
 .channel-card p {
-    font-size: 15px;
-    color: #885E5E; 
-    margin: 10;
-    font-weight: 600;
-    margin-left: 30px;
-    align-items: center;
+    font-size: 18px;
+    color: #885E5E;
     font-weight: bold;
 }
 
-
-
+/* SECTION TITLE */
 .section-title {
     font-size: 30px;
     color: #C33E3E;
@@ -339,16 +393,28 @@ body {
     font-weight: bold;
 }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
 
-    body {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .main-layout {
         flex-direction: column;
     }
 
     .content {
         margin-left: 0;
+        width: 100%;
         padding: 20px;
         margin-top: 10px;
+    }
+
+    .footer {
+        margin-left: 0;
     }
 
     .course-card {
@@ -367,13 +433,11 @@ body {
         gap: 10px;
     }
 
-    @media (max-width: 768px) {
     .back-arrow-inline {
         top: -200px;
         left: -20px;
         font-size: 40px;
     }
-}
 
     .course-image img {
         width: 100%;
@@ -440,18 +504,14 @@ body {
         font-size: 30px;
     }
 
-    @media (max-width: 768px) {
-
     .channel-list {
-        gap: 70px;       
-        padding: 0 10px;  
+        gap: 70px;
+        padding: 0 10px;
     }
 
     .channel-card {
         width: 120px;
     }
-
-}
 
     .channel-card img {
         width: 150%;
@@ -463,7 +523,6 @@ body {
         font-size: 13px;
         font-weight: bold;
         margin-left: 10px;
-        align-items: left;
     }
 
     .section-title {
