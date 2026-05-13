@@ -19,7 +19,9 @@
             <div class="course-content">
                 <div class="course-header-left">
                     <div class="back-arrow-inline">
-                        <i class="fas fa-arrow-left"></i>
+                        <a href="/channels">
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
                     </div>
                     <div class="course-image">
                         <img src="<?= $row['profile_picture'] ?>">
