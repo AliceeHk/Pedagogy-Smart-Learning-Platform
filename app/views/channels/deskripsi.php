@@ -293,10 +293,6 @@ if ($currentCount < 5) {
 
             </div>
 
-            <footer class="footer">
-                <?php include_once __DIR__ . '/../components/footer.php'; ?>
-            </footer>
-
         </main>
 
     </div>
