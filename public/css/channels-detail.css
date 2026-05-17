@@ -13,7 +13,6 @@
     box-sizing: border-box;
 }
 
-/* BODY */
 body {
     margin: 0;
     padding: 0;
@@ -22,21 +21,18 @@ body {
     overflow-x: hidden;
 }
 
-/* HEADER */
 .header {
     width: 100%;
     position: relative;
     z-index: 1000;
 }
 
-/* MAIN LAYOUT */
 .main-layout {
     display: flex;
     width: 100%;
     min-height: 100vh;
 }
 
-/* SIDEBAR */
 .sidebar {
     width: 130px;
     position: fixed;
@@ -48,7 +44,6 @@ body {
     background: transparent;
 }
 
-/* CONTENT */
 .content {
     margin-left: 130px;
     padding: 40px 60px;
@@ -56,21 +51,10 @@ body {
     margin-top: 40px;
 }
 
-/* FOOTER */
 .footer {
     margin-left: 130px;
 }
 
-/* ICONS */
-.action-icons i {
-    color: #885E5E;
-    font-size: 25px;
-    margin-left: 15px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-/* COURSE CARD */
 .course-card {
     position: relative;
     background: #fdf7f2;
@@ -93,7 +77,6 @@ body {
     gap: 15px;
 }
 
-/* BACK BUTTON */
 .back-arrow-inline {
     font-size: 40px;
     color: #d1b4a3;
@@ -109,7 +92,6 @@ body {
     transform: translateX(-5px);
 }
 
-/* IMAGE */
 .course-image img {
     width: 300px;
     height: 300px;
@@ -121,35 +103,54 @@ body {
     left: -50px;
 }
 
-/* DETAILS */
 .course-details {
     flex: 1;
     position: relative;
     left: -30px;
+    min-width: 0;
 }
 
-/* TITLE */
 .title-row {
     display: flex;
-    align-items: center;
-    gap: 100px;
-    font-size: 25px;
+    align-items: flex-end;
+    width: 100%;
+    gap: 20px;
 }
 
 .title-row h1 {
     margin: 0;
     font-size: 30px;
     color: #885E5E;
+    flex: 1;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.3;
 }
 
-/* INSTRUCTOR */
+.action-icons {
+    margin-left: auto;
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    flex-shrink: 0;
+    height: 100%;
+    padding-bottom: 8px;
+}
+
+.action-icons i {
+    color: #885E5E;
+    font-size: 25px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
 .instructor {
     margin: 10px 0;
     font-size: 20px;
     color: #D7B483;
 }
 
-/* INTRO */
 .intro-heading {
     color: var(--merah-utama);
     margin: 10px 0 5px 0;
@@ -157,55 +158,13 @@ body {
     font-size: 26px;
 }
 
-/* DESCRIPTION */
 .description {
     font-size: 20px;
     line-height: 1.6;
     color: #555;
 }
 
-/* FOLLOW BUTTON */
-.follow-checkbox {
-    display: none;
-}
 
-.btn-toggle {
-    position: absolute;
-    right: 30px;
-    top: 30px;
-    background-color: var(--merah-utama);
-    color: white;
-    padding: 20px 60px;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    min-width: 120px;
-    text-align: center;
-    margin-top: 29px;
-}
-
-.text-follow {
-    display: none;
-}
-
-.text-unfollow {
-    display: inline;
-}
-
-.follow-checkbox:checked + .btn-toggle {
-    background-color: #2ecc71;
-}
-
-.follow-checkbox:checked + .btn-toggle .text-unfollow {
-    display: none;
-}
-
-.follow-checkbox:checked + .btn-toggle .text-follow {
-    display: inline;
-}
-
-/* STATS GRID */
 .stats-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -213,7 +172,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* CARD */
 .card {
     background: var(--white);
     padding: 25px;
@@ -223,7 +181,6 @@ body {
     justify-content: center;
 }
 
-/* RATING BAR */
 .bar-item {
     display: flex;
     align-items: center;
@@ -245,7 +202,6 @@ body {
     border-radius: 5px;
 }
 
-/* SUMMARY */
 .rating-summary {
     background-color: #FFDC86;
     text-align: center;
@@ -265,7 +221,6 @@ body {
     display: block;
 }
 
-/* COUNT */
 .count {
     min-width: 25px;
     text-align: right;
@@ -274,7 +229,6 @@ body {
     font-weight: bold;
 }
 
-/* STAR LABEL */
 .label-star {
     display: flex;
     align-items: center;
@@ -292,7 +246,6 @@ body {
     margin-left: 10px;
 }
 
-/* RATING */
 .rating-wrapper {
     display: flex;
     flex-direction: row-reverse;
@@ -325,7 +278,6 @@ body {
     transform: scale(1.1);
 }
 
-/* BIG NUMBER */
 .big-num {
     font-size: 50px;
     font-weight: bold;
@@ -337,7 +289,6 @@ body {
     margin: 5px 0;
 }
 
-/* GIVE RATING */
 .give-rating {
     text-align: center;
     padding: 20px;
@@ -354,38 +305,50 @@ body {
     margin-bottom: 40px;
 }
 
-/* CHANNEL LIST */
 .channel-list {
     display: flex;
-    gap: 40px;
+    gap: 24px;
     margin-top: 20px;
-    flex-wrap: nowrap;
     overflow-x: auto;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
+    scroll-behavior: smooth;
 }
 
-/* CHANNEL CARD */
 .channel-card {
     flex: 0 0 auto;
-    width: 200px;
+    width: 210px;
+    background: white;
+    border-radius: 18px;
+    padding: 14px;
     text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: 0.2s ease;
+}
+
+.channel-card:hover {
+    transform: translateY(-4px);
 }
 
 .channel-card img {
+    width: 100%;
+    height: 140px;
     object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
     display: block;
-    margin-bottom: 10px;
 }
 
 .channel-card p {
-    font-size: 18px;
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.5;
     color: #885E5E;
     font-weight: bold;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
-/* SECTION TITLE */
 .section-title {
     font-size: 30px;
     color: #C33E3E;
@@ -393,7 +356,6 @@ body {
     font-weight: bold;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
 
     .sidebar {
@@ -451,13 +413,21 @@ body {
     }
 
     .title-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 12px;
     }
 
     .title-row h1 {
         font-size: 22px;
+    }
+
+    .action-icons {
+        padding-bottom: 4px;
+    }
+
+    .action-icons i {
+        font-size: 20px;
     }
 
     .description {
@@ -467,8 +437,9 @@ body {
     .btn-toggle {
         position: static;
         width: 100%;
+        height: 60px;
         margin-top: 15px;
-        padding: 15px;
+        font-size: 20px;
     }
 
     .stats-grid {
@@ -505,27 +476,144 @@ body {
     }
 
     .channel-list {
-        gap: 70px;
-        padding: 0 10px;
+        gap: 16px;
+        padding: 0 4px 10px 4px;
     }
 
     .channel-card {
-        width: 120px;
+        width: 160px;
+        padding: 10px;
     }
 
     .channel-card img {
-        width: 150%;
-        height: 180px;
-        gap: 30px;
+        height: 110px;
     }
 
     .channel-card p {
         font-size: 13px;
-        font-weight: bold;
-        margin-left: 10px;
     }
 
     .section-title {
         font-size: 22px;
     }
+}
+
+.title-row {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    gap: 20px;
+}
+
+.title-row h1 {
+    margin: 0;
+    font-size: 30px;
+    color: #885E5E;
+
+    flex: 1;
+
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.3;
+}
+
+.action-icons {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+
+    padding-bottom: 8px;
+
+    flex-shrink: 0;
+}
+
+.action-icons i {
+    color: #885E5E;
+    font-size: 25px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.follow-checkbox {
+    display: none;
+}
+
+.btn-toggle {
+    width: 170px;
+    height: 40px;
+
+    background-color: var(--merah-utama);
+    color: white;
+
+    border-radius: 12px;
+    border: 2px solid transparent;
+
+    font-weight: bold;
+    font-size: 23px;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+
+    flex-shrink: 0;
+
+    margin-left: 15px;
+}
+
+.text-follow {
+    display: none;
+}
+
+.text-unfollow {
+    display: inline;
+}
+
+.follow-checkbox:checked + .btn-toggle {
+    background-color: #FFF7F2;
+    border: 2px solid #C33E3E;
+    color: #C33E3E;
+}
+
+.follow-checkbox:checked + .btn-toggle .text-unfollow {
+    display: none;
+}
+
+.follow-checkbox:checked + .btn-toggle .text-follow {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+
+    .title-row {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .title-row h1 {
+        font-size: 22px;
+        width: 100%;
+    }
+
+    .action-icons {
+        padding-bottom: 0;
+    }
+
+    .action-icons i {
+        font-size: 20px;
+    }
+
+    .btn-toggle {
+        width: 160px;
+        height: 52px;
+        font-size: 18px;
+        margin-left: auto;
+    }
+
 }

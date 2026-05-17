@@ -98,8 +98,7 @@ if ($currentCount < 5) {
 
     <link rel="stylesheet" href="/css/channels-detail.css">
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -136,16 +135,30 @@ if ($currentCount < 5) {
 
                     <div class="course-details">
 
-                        <div class="title-row">
+<div class="title-row">
 
-                            <h1><?= $row['nama_channel'] ?></h1>
+    <h1><?= $row['nama_channel'] ?></h1>
 
-                            <div class="action-icons">
-                                <i class="fas fa-exclamation-circle"></i>
-                                <i class="fas fa-bell"></i>
-                            </div>
+    <div class="action-icons">
+        <i class="fas fa-exclamation-circle"></i>
+        <i class="fas fa-bell"></i>
+    </div>
 
-                        </div>
+    <input type="checkbox" id="follow-logic" class="follow-checkbox">
+
+    <label for="follow-logic" class="btn-toggle">
+
+        <span class="text-unfollow">
+            Unfollow
+        </span>
+
+        <span class="text-follow">
+            Follow
+        </span>
+
+    </label>
+
+</div>
 
                         <p class="instructor">
 
@@ -170,23 +183,6 @@ if ($currentCount < 5) {
 
                 </div>
 
-                <input type="checkbox"
-                    id="follow-logic"
-                    class="follow-checkbox">
-
-                <label for="follow-logic"
-                    class="btn-toggle">
-
-                    <span class="text-unfollow">
-                        Unfollow
-                    </span>
-
-                    <span class="text-follow">
-                        Follow
-                    </span>
-
-                </label>
-
             </div>
 
             <div class="stats-grid">
@@ -203,7 +199,7 @@ if ($currentCount < 5) {
                     ];
 
                     foreach (array_reverse($rating_data) as $r):
-                    ?>
+                        ?>
 
                         <div class="bar-item">
 
@@ -213,8 +209,7 @@ if ($currentCount < 5) {
                             </span>
 
                             <div class="progress-bg">
-                                <div class="progress-fill"
-                                    style="width: <?= $r['val'] ?>%;">
+                                <div class="progress-fill" style="width: <?= $r['val'] ?>%;">
                                 </div>
                             </div>
 
