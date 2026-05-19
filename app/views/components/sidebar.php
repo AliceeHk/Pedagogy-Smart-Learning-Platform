@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    
     <div class="sidebar">
         <table id="sidebar">
             <tr>
@@ -30,7 +29,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td><a href="/channels"><img src="/assets/images/icon/logout.png" alt="logout"></a></td>
+                <td><a href="#" id="sidebar-logout-btn"><img src="/assets/images/icon/logout.png" alt="logout"></a></td>
             </tr>
         </table>
     </div>

@@ -1,0 +1,92 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 99999; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  background: #ffffff;
+  padding: 35px 40px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 420px;
+  width: 85%;
+  animation: popScaleUp 0.2s ease;
+}
+
+.modal-box h2 {
+  font-family: 'Roboto Flex', sans-serif;
+  color: #4a4a4a;
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 30px;
+  line-height: 1.0;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.modal-buttons button {
+  padding: 12px 28px;
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.modal-buttons button:active {
+  transform: scale(0.98);
+}
+
+.btn-logout {
+  background-color: #c74343;
+  color: white;
+}
+
+.btn-logout:hover {
+  background-color: #ae3636;
+}
+
+.btn-cancel {
+  background-color: #e2e2e2;
+  color: #555555;
+}
+
+.btn-cancel:hover {
+  background-color: #d4d4d4;
+}
+
+@keyframes popScaleUp {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
