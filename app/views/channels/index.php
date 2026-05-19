@@ -30,6 +30,8 @@ $result = $conn->query($query);
     <title>Pedagogy - Daftar Channel</title>
 
     <link rel="stylesheet" href="/css/channels-index.css">
+    <link rel="stylesheet" href="/css/footer.css"> 
+    <link rel="stylesheet" href="/css/logout.css">
 </head>
 
 <body>
@@ -165,10 +167,9 @@ $result = $conn->query($query);
         </div>
     </div>
 
-    <footer class="footer">
-        <?php include_once __DIR__ . '/../components/footer.php'; ?>
-    </footer>
-    <?php include_once __DIR__ . '/../components/footer.php'; ?>
-</body>
 
+    <?php include_once __DIR__ . '/../components/footer.php'; ?>
+    <?php include_once __DIR__ . '/../components/logout-modal.php'; ?>  
+
+</body>
 </html>

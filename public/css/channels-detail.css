@@ -13,9 +13,14 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     margin: 0;
     padding: 0;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-krem);
     overflow-x: hidden;
@@ -29,39 +34,23 @@ body {
 
 .main-layout {
     display: flex;
-    width: 100%;
-    min-height: 100vh;
+    flex-direction: column;
 }
 
-.sidebar {
-    width: 130px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 999;
-    background: transparent;
-}
-
-.content {
+main.content {
+    flex: 1;
     margin-left: 130px;
     padding: 40px 60px;
-    width: calc(100% - 130px);
     margin-top: 40px;
 }
 
-.footer {
-    margin-left: 130px;
-}
-
 .course-card {
-    position: relative;
     background: #fdf7f2;
     border-radius: 20px;
     padding: 30px;
     display: flex;
     margin-bottom: 30px;
+    position: relative;
 }
 
 .course-content {
@@ -85,6 +74,8 @@ body {
     cursor: pointer;
     margin-top: -25px;
     transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
 }
 
 .back-arrow-inline:hover {
@@ -107,13 +98,19 @@ body {
     flex: 1;
     position: relative;
     left: -30px;
-    min-width: 0;
 }
 
 .title-row {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
     width: 100%;
+}
+
+.title-left-side {
+    display: flex;
+    align-items: center;
     gap: 20px;
 }
 
@@ -136,6 +133,12 @@ body {
     flex-shrink: 0;
     height: 100%;
     padding-bottom: 8px;
+}
+
+.action-icons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }
 
 .action-icons i {
@@ -164,10 +167,45 @@ body {
     color: #555;
 }
 
+.follow-checkbox {
+    display: none;
+}
+
+.btn-toggle {
+    background-color: var(--merah-utama);
+    color: white;
+    padding: 12px 35px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.text-follow {
+    display: none;
+}
+
+.text-unfollow {
+    display: inline;
+}
+
+.follow-checkbox:checked + .btn-toggle {
+    background-color: #2ecc71;
+}
+
+.follow-checkbox:checked + .btn-toggle .text-unfollow {
+    display: none;
+}
+
+.follow-checkbox:checked + .btn-toggle .text-follow {
+    display: inline;
+}
 
 .stats-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1.5fr; 
     gap: 20px;
     margin-bottom: 30px;
 }
@@ -178,7 +216,6 @@ body {
     min-height: 250px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-    justify-content: center;
 }
 
 .bar-item {
@@ -265,6 +302,23 @@ body {
     transition: color 0.2s, transform 0.2s;
 }
 
+.label-star {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 90px;
+    font-size: 20px;
+    color: #C33E3E;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.label-star i {
+    color: #FFB700 !important;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
 .rating-wrapper input:checked ~ label {
     color: #ffc107;
 }
@@ -289,64 +343,24 @@ body {
     margin: 5px 0;
 }
 
-.give-rating {
+.card.give-rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 20px;
-    color: #5E5E5E;
+}
+
+.card.give-rating p {
+    font-size: 22px; 
     font-weight: bold;
+    color: #5E5E5E;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 .card.give-rating .rating-wrapper label {
     font-size: 40px;
-}
-
-.card.give-rating p {
-    font-size: 30px;
-    margin-bottom: 40px;
-}
-
-.channel-list {
-    display: flex;
-    gap: 24px;
-    margin-top: 20px;
-    overflow-x: auto;
-    padding-bottom: 12px;
-    scroll-behavior: smooth;
-}
-
-.channel-card {
-    flex: 0 0 auto;
-    width: 210px;
-    background: white;
-    border-radius: 18px;
-    padding: 14px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    transition: 0.2s ease;
-}
-
-.channel-card:hover {
-    transform: translateY(-4px);
-}
-
-.channel-card img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 14px;
-    display: block;
-}
-
-.channel-card p {
-    margin-top: 12px;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #885E5E;
-    font-weight: bold;
-    width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
 }
 
 .section-title {
@@ -356,19 +370,51 @@ body {
     font-weight: bold;
 }
 
+.channel-list {
+    display: flex;
+    gap: 40px; 
+    margin-top: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 15px;
+}
+
+.channel-card {
+    flex: 0 0 auto;
+    width: 220px;
+    text-align: center; 
+}
+
+.channel-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.channel-card p {
+    font-size: 18px; 
+    color: #885E5E;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.channel-list::-webkit-scrollbar {
+    display: none;
+}
+
+.channel-list {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 @media (max-width: 768px) {
-
-    .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-    }
-
-    .main-layout {
-        flex-direction: column;
-    }
-
-    .content {
+    main.content {
         margin-left: 0;
         width: 100%;
         padding: 20px;
@@ -386,52 +432,21 @@ body {
 
     .course-content {
         flex-direction: column;
-        gap: 15px;
-    }
-
-    .course-header-left {
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .back-arrow-inline {
-        top: -200px;
-        left: -20px;
-        font-size: 40px;
     }
 
     .course-image img {
         width: 100%;
         height: auto;
-        position: static;
-        margin: 0;
+        left: 0;
     }
 
     .course-details {
-        position: static;
+        left: 0;
     }
 
     .title-row {
-        flex-direction: row;
-        align-items: flex-end;
-        gap: 12px;
-    }
-
-    .title-row h1 {
-        font-size: 22px;
-    }
-
-    .action-icons {
-        padding-bottom: 4px;
-    }
-
-    .action-icons i {
-        font-size: 20px;
-    }
-
-    .description {
-        font-size: 16px;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .btn-toggle {
@@ -439,62 +454,28 @@ body {
         width: 100%;
         height: 60px;
         margin-top: 15px;
-        font-size: 20px;
     }
 
     .stats-grid {
         grid-template-columns: 1fr;
     }
 
-    .card {
-        min-height: auto;
-    }
-
-    .bar-item {
-        font-size: 18px;
-        gap: 10px;
-    }
-
-    .rating-summary {
-        font-size: 18px;
-    }
-
-    .rating-summary .big-num {
-        font-size: 28px;
-    }
-
-    .stars-gold {
-        font-size: 24px;
-    }
-
-    .card.give-rating p {
-        font-size: 20px;
-    }
-
-    .card.give-rating .rating-wrapper label {
-        font-size: 30px;
-    }
-
     .channel-list {
-        gap: 16px;
-        padding: 0 4px 10px 4px;
+        gap: 20px;
     }
 
     .channel-card {
         width: 160px;
-        padding: 10px;
     }
 
     .channel-card img {
-        height: 110px;
+        height: 160px;
     }
+}
 
-    .channel-card p {
-        font-size: 13px;
-    }
-
-    .section-title {
-        font-size: 22px;
+@media (max-width: 768px) {
+    .footer {
+        margin-left: 0;
     }
 }
 
