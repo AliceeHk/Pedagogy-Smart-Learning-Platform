@@ -1,16 +1,20 @@
 <?php
 $conn = new mysqli("localhost", "root", "", "pedagogy");
 
+$user_id = 10;
+
 $query = "
 SELECT 
     c.id,
     c.nama_channel,
     c.profile_picture,
     u.nama AS guru,
-    COALESCE(COUNT(cm.user_id), 0) AS jumlah_anggota
-FROM channels c
+    COUNT(cm2.user_id) AS jumlah_anggota
+FROM channel_members cm
+JOIN channels c ON cm.channel_id = c.id
 JOIN users u ON c.user_id = u.id
-LEFT JOIN channel_members cm ON c.id = cm.channel_id
+LEFT JOIN channel_members cm2 ON c.id = cm2.channel_id
+WHERE cm.user_id = $user_id
 GROUP BY c.id, c.nama_channel, c.profile_picture, u.nama
 ";
 
@@ -24,6 +28,7 @@ $result = $conn->query($query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedagogy - Daftar Channel</title>
+
     <link rel="stylesheet" href="/css/channels-index.css">
     <link rel="stylesheet" href="/css/footer.css"> 
     <link rel="stylesheet" href="/css/logout.css">
@@ -43,48 +48,67 @@ $result = $conn->query($query);
         <div class="content-wrapper">
 
             <div class="left">
-                <p class="title">Daftar Channels (<?= $result->num_rows ?>)</p>
+
+                <p class="title">
+                    Daftar Channels (<?= $result->num_rows ?>)
+                </p>
 
                 <?php while ($row = $result->fetch_assoc()): ?>
-                    <a href="/channels/detail" class="see-all">
+
+                    <a href="/channels/detail?id=<?= $row['id'] ?>" class="see-all">
+
                         <table class="content-table">
                             <tr>
                                 <td>
+
                                     <div class="card">
+
                                         <div class="card-img">
                                             <img src="<?= '/' . ltrim($row['profile_picture'], '/') ?>" alt="">
                                         </div>
 
                                         <div class="card-content">
+
                                             <div class="card-header">
+
                                                 <div class="card-title">
                                                     <?= $row['nama_channel'] ?>
                                                 </div>
+
                                                 <div class="card-icons">
                                                     <img src="/assets/images/icon/channel-notification.png">
                                                     <img src="/assets/images/icon/channel-report.png">
                                                 </div>
+
                                             </div>
 
                                             <div class="card-info">
+
                                                 <img src="/assets/images/icon/channel-teachers.png">
                                                 <?= $row['guru'] ?> |
 
                                                 <img src="/assets/images/icon/channel-members.png">
+
                                                 <?= $row['jumlah_anggota'] >= 100
                                                     ? $row['jumlah_anggota'] . '+'
                                                     : $row['jumlah_anggota'] ?>
+
                                             </div>
 
                                             <div class="card-button">
                                                 <button>Unfollow</button>
                                             </div>
+
                                         </div>
+
                                     </div>
+
                                 </td>
                             </tr>
                         </table>
+
                     </a>
+
                 <?php endwhile; ?>
             </div>
 
@@ -93,11 +117,20 @@ $result = $conn->query($query);
 
                 <?php
                 $other = $conn->query("
-                SELECT c.id, c.nama_channel, c.profile_picture, u.nama AS guru
+                SELECT 
+                c.id,
+                c.nama_channel,
+                c.profile_picture,
+                u.nama AS guru
                 FROM channels c
                 JOIN users u ON c.user_id = u.id
+                WHERE c.id NOT IN (
+                SELECT channel_id
+                FROM channel_members
+                WHERE user_id = $user_id
+                )
                 LIMIT 4
-            ");
+                ");
                 ?>
 
                 <?php while ($row = $other->fetch_assoc()): ?>

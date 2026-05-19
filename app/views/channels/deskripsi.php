@@ -1,3 +1,93 @@
+<?php
+$conn = new mysqli("localhost", "root", "", "pedagogy");
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$id = $_GET['id'] ?? 1;
+
+$query = "
+SELECT 
+    c.*,
+    u.nama AS guru,
+    COALESCE(COUNT(cm.user_id), 0) AS jumlah_anggota
+FROM channels c
+JOIN users u 
+    ON c.user_id = u.id
+LEFT JOIN channel_members cm 
+    ON c.id = cm.channel_id
+WHERE c.id = ?
+GROUP BY c.id
+";
+
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $id);
+$stmt->execute();
+
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+
+$guruId = $row['user_id'];
+
+$recommendedChannels = [];
+
+$sameGuruQuery = "
+SELECT 
+    c.*,
+    u.nama AS guru
+FROM channels c
+JOIN users u
+    ON c.user_id = u.id
+WHERE c.user_id = ?
+AND c.id != ?
+LIMIT 5
+";
+
+$sameGuruStmt = $conn->prepare($sameGuruQuery);
+$sameGuruStmt->bind_param("ii", $guruId, $id);
+$sameGuruStmt->execute();
+
+$sameGuruResult = $sameGuruStmt->get_result();
+
+while ($ch = $sameGuruResult->fetch_assoc()) {
+    $recommendedChannels[] = $ch;
+}
+
+$currentCount = count($recommendedChannels);
+
+if ($currentCount < 5) {
+
+    $excludeIds = [$id];
+
+    foreach ($recommendedChannels as $item) {
+        $excludeIds[] = $item['id'];
+    }
+
+    $excludeString = implode(',', $excludeIds);
+
+    $remaining = 5 - $currentCount;
+
+    $randomQuery = "
+    SELECT 
+        c.*,
+        u.nama AS guru
+    FROM channels c
+    JOIN users u
+        ON c.user_id = u.id
+    WHERE c.id NOT IN ($excludeString)
+    ORDER BY RAND()
+    LIMIT $remaining
+    ";
+
+    $randomResult = $conn->query($randomQuery);
+
+    while ($ch = $randomResult->fetch_assoc()) {
+        $recommendedChannels[] = $ch;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -91,23 +181,48 @@
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                         class="fas fa-star"></i><i class="far fa-star"></i>
                 </div>
-                <p>76 Ratings</p>
-            </div>
 
-            <div class="card give-rating">
-                <p>Can You Give Rating?</p>
-                <div class="rating-wrapper">
-                    <input type="radio" name="rating" id="star-5" value="5">
-                    <label for="star-5" class="fas fa-star"></label>
-                    <input type="radio" name="rating" id="star-4" value="4">
-                    <label for="star-4" class="fas fa-star"></label>
-                    <input type="radio" name="rating" id="star-3" value="3">
-                    <label for="star-3" class="fas fa-star"></label>
-                    <input type="radio" name="rating" id="star-2" value="2">
-                    <label for="star-2" class="fas fa-star"></label>
-                    <input type="radio" name="rating" id="star-1" value="1">
-                    <label for="star-1" class="fas fa-star"></label>
+                <div class="card rating-summary">
+
+                    <span class="big-num">4.3</span>
+
+                    <div class="stars-gold">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                    <p>76 Ratings</p>
+
                 </div>
+
+                <div class="card give-rating">
+
+                    <p>Can You Give Rating?</p>
+
+                    <div class="rating-wrapper">
+
+                        <input type="radio" name="rating" id="star-5" value="5">
+                        <label for="star-5" class="fas fa-star"></label>
+
+                        <input type="radio" name="rating" id="star-4" value="4">
+                        <label for="star-4" class="fas fa-star"></label>
+
+                        <input type="radio" name="rating" id="star-3" value="3">
+                        <label for="star-3" class="fas fa-star"></label>
+
+                        <input type="radio" name="rating" id="star-2" value="2">
+                        <label for="star-2" class="fas fa-star"></label>
+
+                        <input type="radio" name="rating" id="star-1" value="1">
+                        <label for="star-1" class="fas fa-star"></label>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
 
