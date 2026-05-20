@@ -19,7 +19,7 @@
             <section class="top-section">
                 <div class="profile-info">
                     <div class="avatar">
-                        <img src="path/ke/avatar.jpg" alt="Avatar">
+                        <img src="/assets/images/profile/profile.png" alt="Avatar">
                     </div>
                     <div class="user-details">
                         <h1 class="greeting">Hello Britania!</h1>
@@ -80,9 +80,9 @@
                 <h2 class="section-title">Today Motivations</h2>
                 <div class="grid-container-motive">
                     <div class="card-img"><img src="/assets/motivation/motive1.jpg" alt="motive 1"></div>
-                    <div class="card-img"><img src="app/public/assets/motivation/motive2.jpg" alt="Motive 2"></div>
-                    <div class="card-img"><img src="app/public/assets/motivation/motive3.jpg" alt="Motive 3"></div>
-                    <div class="card-img"><img src="app/public/assets/motivation/motive4.jpg" alt="Motive 4"></div>
+                    <div class="card-img"><img src="/assets/motivation/motive2.png" alt="Motive 2"></div>
+                    <div class="card-img"><img src="/assets/motivation/motive3.png" alt="Motive 3"></div>
+                    <div class="card-img"><img src="/assets/motivation/motive4.png" alt="Motive 4"></div>
                 </div>
             </section>
 

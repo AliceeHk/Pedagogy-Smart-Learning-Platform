@@ -90,6 +90,12 @@ body {
     font-size: 25px;
 }
 
+.content-section {
+    /* Menambahkan jarak 50px dari konten di atasnya. 
+       Kamu bisa naikkan angkanya (misal 60px atau 70px) jika ingin lebih renggang */
+    margin-top: 50px; 
+}
+
 .see-detail {
     color: #bbb;
     text-decoration: none;
@@ -154,23 +160,24 @@ body {
 .section-title {
     color: var(--text-maroon);
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 30 px;
 }
 
 .grid-container-motive {
-    display: grid;
+    display: grid;  
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 50px;
 }
-
+ 
 .grid-container-channels {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    gap: 40px;
 }
 
 .card-img img, .channel-card img {
     width: 100%;
+    max-width: 100%;
     aspect-ratio: 1/1;
     border-radius: 15px;
     object-fit: cover;
