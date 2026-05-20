@@ -98,8 +98,6 @@ if ($currentCount < 5) {
     <title>Pedagogy Dashboard</title>
 
     <link rel="stylesheet" href="/css/channels-detail.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/logout.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -246,7 +244,6 @@ if ($currentCount < 5) {
     </main>
 
     <?php include_once __DIR__ . '/../components/footer.php'; ?>
-    <?php include_once __DIR__ . '/../components/logout-modal.php'; ?>
 </body>
 
 </html>
