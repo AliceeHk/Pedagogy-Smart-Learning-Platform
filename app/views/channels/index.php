@@ -149,7 +149,7 @@ $result = $conn->query($query);
                                             <?= $row['guru'] ?>
                                         </div>
                                         <div class="card-button">
-                                            <a href="/channels/detail.php?id=<?= $row['id'] ?>">
+                                            <a href="/channels/detail?id=<?= $row['id'] ?>">
                                                 <button>See Detail</button>
                                             </a>
                                         </div>

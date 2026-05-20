@@ -112,7 +112,7 @@ if ($currentCount < 5) {
         <div class="course-card">
             <div class="course-content">
                 <div class="course-header-left">
-                    <a href="./" class="back-arrow-inline" style="text-decoration: none;">
+                    <a href="/channels" class="back-arrow-inline" style="text-decoration: none;">
                         <i class="fas fa-arrow-left"></i>
                     </a>
                     <div class="course-image">
@@ -153,7 +153,7 @@ if ($currentCount < 5) {
         </div>
 
         <div class="stats-grid">
-            <div class="card rating-bars">
+            <div class="card rating-bars" style="width: 400px; padding-top: 50px;">
                 <?php
                 $rating_data = [
                     ['label' => 'five', 'val' => 80, 'count' => 43],
@@ -172,13 +172,7 @@ if ($currentCount < 5) {
                     </div>
                 <?php endforeach; ?>
             </div>
-
-            <div class="card rating-summary">
-                <span class="big-num">4.3</span>
-                <div class="stars-gold">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                        class="fas fa-star"></i><i class="far fa-star"></i>
-                </div>
+            <div class="card rating-summary" style="width: 380px;">
 
                 <div class="card rating-summary">
 
@@ -195,33 +189,33 @@ if ($currentCount < 5) {
                     <p>76 Ratings</p>
 
                 </div>
+            </div>
+            <div class="card give-rating">
 
-                <div class="card give-rating">
+                <p>Can You Give Rating?</p>
 
-                    <p>Can You Give Rating?</p>
+                <div class="rating-wrapper">
 
-                    <div class="rating-wrapper">
+                    <input type="radio" name="rating" id="star-5" value="5">
+                    <label for="star-5" class="fas fa-star"></label>
 
-                        <input type="radio" name="rating" id="star-5" value="5">
-                        <label for="star-5" class="fas fa-star"></label>
+                    <input type="radio" name="rating" id="star-4" value="4">
+                    <label for="star-4" class="fas fa-star"></label>
 
-                        <input type="radio" name="rating" id="star-4" value="4">
-                        <label for="star-4" class="fas fa-star"></label>
+                    <input type="radio" name="rating" id="star-3" value="3">
+                    <label for="star-3" class="fas fa-star"></label>
 
-                        <input type="radio" name="rating" id="star-3" value="3">
-                        <label for="star-3" class="fas fa-star"></label>
+                    <input type="radio" name="rating" id="star-2" value="2">
+                    <label for="star-2" class="fas fa-star"></label>
 
-                        <input type="radio" name="rating" id="star-2" value="2">
-                        <label for="star-2" class="fas fa-star"></label>
-
-                        <input type="radio" name="rating" id="star-1" value="1">
-                        <label for="star-1" class="fas fa-star"></label>
-
-                    </div>
+                    <input type="radio" name="rating" id="star-1" value="1">
+                    <label for="star-1" class="fas fa-star"></label>
 
                 </div>
 
             </div>
+
+        </div>
         </div>
 
         <h3 class="section-title">Channels You May Like</h3>
