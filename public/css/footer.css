@@ -1,62 +1,103 @@
 .footer {
-    background-color: #C33E3E;
-    color: white;
-    padding: 20px 30px;
-    font-family: Arial, sans-serif;
+  background-color: #c74343;
+  color: white;
+  font-family: 'Roboto Flex', sans-serif;
+  
+  margin-left: var(--sidebar-width, 82px);
+  width: auto; 
+  display: block;
+  clear: both;
+  
+  padding: 35px 100px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-container {
-    display: flex;
-    justify-content:space-between;
-    align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 200px;
+  margin: auto;
 }
 
 .footer-col {
-    flex: 1;
+  flex: 1;
 }
 
 .footer-col h2 {
-    margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
 .footer-col ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
-.footer-col ul a {
-    margin-bottom: 8px;
+.footer-col ul li {
+  margin-bottom: 10px;
 }
 
 .footer-col ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight:300;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .footer-col p {
-    line-height: 1.6;
-    max-width: 320px;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
 .footer-bottom {
-    display: flex;
-    gap: 350px;
-    align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  margin-top: 50px;
+}
+
+.download {
+  padding-left: 60px;
+}
+
+.social,
+.download,
+.branding {
+  flex: 1;
+}
+
+.social h2,
+.download h2,
+.branding h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.social div,
+.download div {
+  display: flex;
+  gap: 20px;
 }
 
 .social img,
 .download img {
-    width: 30px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.social h2,
-.download h2 {
-    margin-bottom: 8px;
+  width: 40px;
 }
 
 .branding {
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.branding h3 {
+  margin: 0;
+  font-size: 20px;
 }

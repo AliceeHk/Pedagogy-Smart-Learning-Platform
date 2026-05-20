@@ -19,8 +19,8 @@ body {
     border-collapse: separate;
     border-spacing: 0;
     background-color: #C33E3E;
-    width: 7%;
-    position: fixed;
+    width: 6%;
+    position:fixed;
     left: 0;
     top: 60px;
     z-index: 1000;
@@ -59,7 +59,6 @@ tr img {
         padding: 10px 16px;
     }
 
-    /* Remove table layout completely */
     #sidebar table {
         display: flex;
         flex-direction: row;
@@ -75,7 +74,6 @@ tr img {
         justify-self: center;
     }
 
-    /* Make each row a flex item - side by side */
     #sidebar tr {
         display: inline-flex;
         flex-direction: column;
@@ -86,24 +84,20 @@ tr img {
         padding: 0 0 0 9.5%;
     }
 
-    /* Hide separator rows */
     #sidebar .gap {
         display: none;
     }
 
-    /* Remove the last icon row */
     #sidebar tr:last-of-type {
         display: none;
     }
 
-    /* Make cells block level */
     #sidebar td {
         display: block;
         text-align: center;
     }
 
-    /* Make images smaller and centered with spacing */
-    tr img {
+     tr img {
         width: 28px !important;
         display: block;
         margin: 0 12px;
