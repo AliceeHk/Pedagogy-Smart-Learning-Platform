@@ -149,7 +149,7 @@ $result = $conn->query($query);
                                             <?= $row['guru'] ?>
                                         </div>
                                         <div class="card-button">
-                                            <a href="/channels/detail.php?id=<?= $row['id'] ?>">
+                                            <a href="/channels/detail?id=<?= $row['id'] ?>">
                                                 <button>See Detail</button>
                                             </a>
                                         </div>
@@ -160,6 +160,9 @@ $result = $conn->query($query);
                     </table>
                 <?php endwhile; ?>
 
+                <p class="title" style="margin-bottom: 6.4%; margin-left: 90px; color: #C33E3E;">See More</p>
+                <hr style="border: 1.25px solid #C33E3E; width: 230px; margin-left: 35px; margin-bottom: 25px;">
+                <img style="height: 180px; width: 239px; margin-left: 25px;" src="/assets/images/icon/branding.png" alt="">
             </div>
 
         </div>
