@@ -21,7 +21,7 @@ body {
     height: 8%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:space-between;
     background-color: #ffffff;
     padding: 0.5% 0;
     position: fixed;

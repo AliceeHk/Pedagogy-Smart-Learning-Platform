@@ -30,6 +30,7 @@ $result = $conn->query($query);
     <title>Pedagogy - Daftar Channel</title>
 
     <link rel="stylesheet" href="/css/channels-index.css">
+
 </head>
 
 <body>
@@ -37,7 +38,6 @@ $result = $conn->query($query);
     <div class="header">
         <?php include_once __DIR__ . '/../components/header.php'; ?>
     </div>
-
     <div class="sidebar">
         <?php include_once __DIR__ . '/../components/sidebar.php'; ?>
     </div>
@@ -168,10 +168,7 @@ $result = $conn->query($query);
         </div>
     </div>
 
-    <footer class="footer">
-        <?php include_once __DIR__ . '/../components/footer.php'; ?>
-    </footer>
+
     <?php include_once __DIR__ . '/../components/footer.php'; ?>
 </body>
-
 </html>
