@@ -16,6 +16,9 @@ $router->add('GET', '/channels', 'ChannelController', 'index');
 $router->add('GET', '/channels/detail', 'ChannelController', 'detail');
 
 
+$router->add('GET', '/search', 'SearchController', 'index');
+
+
 // Daftar Informasi
 $router->add('GET', '/informations', 'InformationController', 'index');
 $router->run();

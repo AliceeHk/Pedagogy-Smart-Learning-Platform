@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedagogy - Daftar Channel</title>
     <link rel="stylesheet" href="/css/informations-index.css">
-    <link rel="stylesheet" href="/css/footer.css"> 
-    <link rel="stylesheet" href="/css/logout.css">
 </head>
 
 <body>
@@ -40,7 +38,6 @@
     
 
     <?php include_once __DIR__ . '/../components/footer.php'; ?>
-    <?php include_once __DIR__ . '/../components/logout-modal.php'; ?>  
 
 </body>
 
